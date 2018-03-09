@@ -1,0 +1,8 @@
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/.terraform
+**/*.pem
+**/*.war
+**/ec2_rsa
+**/ec2_rsa.pub
+

@@ -1,0 +1,2772 @@
+2018/03/03 22:12:24 [INFO] Terraform version: 0.10.8  44110772d9ffd0ec3589943c6d4c93c24a5fff06
+2018/03/03 22:12:24 [INFO] Go runtime version: go1.9
+2018/03/03 22:12:24 [INFO] CLI args: []string{"/usr/bin/terraform", "apply"}
+2018/03/03 22:12:24 [DEBUG] Attempting to open CLI config file: /home/terraform/.terraformrc
+2018/03/03 22:12:24 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2018/03/03 22:12:24 [DEBUG] CLI config is &main.Config{Providers:map[string]string{}, Provisioners:map[string]string{}, DisableCheckpoint:false, DisableCheckpointSignature:false, PluginCacheDir:"", Credentials:map[string]map[string]interface {}(nil), CredentialsHelpers:map[string]*main.ConfigCredentialsHelper(nil)}
+2018/03/03 22:12:24 [INFO] CLI command args: []string{"apply"}
+2018/03/03 22:12:24 [INFO] command: empty terraform config, returning nil
+2018/03/03 22:12:24 [DEBUG] command: no data state file found for backend config
+2018/03/03 22:12:24 [DEBUG] New state was assigned lineage "4e2149e8-4565-4539-a4f0-3748b0d88484"
+2018/03/03 22:12:24 [INFO] command: backend initialized: <nil>
+2018/03/03 22:12:24 [DEBUG] checking for provider in "."
+2018/03/03 22:12:24 [DEBUG] checking for provider in "/usr/bin"
+2018/03/03 22:12:24 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2018/03/03 22:12:24 [DEBUG] found provider "terraform-provider-aws_v1.9.0_x4"
+2018/03/03 22:12:24 [DEBUG] found valid plugin: "aws"
+2018/03/03 22:12:24 [DEBUG] checking for provisioner in "."
+2018/03/03 22:12:24 [DEBUG] checking for provisioner in "/usr/bin"
+2018/03/03 22:12:24 [DEBUG] checking for provisioner in ".terraform/plugins/linux_amd64"
+2018/03/03 22:12:24 [INFO] command: backend <nil> is not enhanced, wrapping in local
+2018/03/03 22:12:24 [INFO] backend/local: starting Apply operation
+2018/03/03 22:12:24 [TRACE] Preserving existing state lineage "2b981f3a-b756-4150-a29d-2f987b10de6a"
+2018/03/03 22:12:24 [TRACE] Preserving existing state lineage "2b981f3a-b756-4150-a29d-2f987b10de6a"
+2018/03/03 22:12:24 [INFO] terraform: building graph: GraphTypeInput
+2018/03/03 22:12:24 [TRACE] ConfigTransformer: Starting for path: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.LocalTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OutputTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Beginning...
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_rds", Type:"aws_db_instance", RawCount:(*config.RawConfig)(0xc4203d62a0), RawConfig:(*config.RawConfig)(0xc4203d6230), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"main", Type:"aws_vpc", RawCount:(*config.RawConfig)(0xc4203d63f0), RawConfig:(*config.RawConfig)(0xc4203d6310), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"lamp", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203a6380), RawConfig:(*config.RawConfig)(0xc4203a61c0), Provisioners:[]*config.Provisioner{(*config.Provisioner)(0xc420344de0), (*config.Provisioner)(0xc420344ed0), (*config.Provisioner)(0xc420345050), (*config.Provisioner)(0xc4203452c0)}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"lamp_allow_all", Type:"aws_security_group", RawCount:(*config.RawConfig)(0xc4203a68c0), RawConfig:(*config.RawConfig)(0xc4203a6850), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"contentstore_clientsg", Type:"aws_security_group", RawCount:(*config.RawConfig)(0xc4203d6000), RawConfig:(*config.RawConfig)(0xc4203a6930), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_contentstore_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d60e0), RawConfig:(*config.RawConfig)(0xc4203d6070), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"chefserver_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d61c0), RawConfig:(*config.RawConfig)(0xc4203d6150), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_instance.lamp": aws_instance.lamp
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.lamp_allow_all": aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.contentstore_clientsg": aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.edrms_contentstore_ec2": data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.chefserver_ec2": data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_db_instance.edrms_rds": data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_vpc.main": data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+data.aws_vpc.main - *terraform.NodeAbstractResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.DisableProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Attach provider request: []string{} aws
+2018/03/03 22:12:24 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc4203a60e0)}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachProviderConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.contentstore_clientsg" references: [data.aws_vpc.main]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provider.aws" references: [var.aws_region]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.chefserver_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_db_instance.edrms_rds" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_instance.lamp" references: [data.aws_db_instance.edrms_rds data.aws_instance.chefserver_ec2 data.aws_instance.edrms_contentstore_ec2 var.aws_az var.ec2_instance_type var.instancelist]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.lamp_allow_all" references: [data.aws_vpc.main]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "output.ec2_dns_name" references: [aws_instance.lamp]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserver" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserverfqdn" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.instancelist" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_az" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.ec2_instance_type" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.edrms_contentstore_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_vpc.main" references: [var.aws_vpc]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_vpc" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+aws_instance.lamp - *terraform.NodeAbstractResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  data.aws_vpc.main - *terraform.NodeAbstractResource
+data.aws_db_instance.edrms_rds - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeAbstractResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeAbstractResource
+  aws_security_group.lamp_allow_all - *terraform.NodeAbstractResource
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeAbstractResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] Starting graph walk: walkInput
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "root"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_security_group.lamp_allow_all" waiting on "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.chef (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.file (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_db_instance.edrms_rds" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.edrms_contentstore_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.remote-exec (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "output.ec2_dns_name" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws" waiting on "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_security_group.contentstore_clientsg" waiting on "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.chefserver_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_instance.lamp", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.file (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_security_group.contentstore_clientsg", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_security_group.lamp_allow_all", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_vpc.main", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "output.ec2_dns_name", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.edrms_contentstore_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.chefserver_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.chef (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_db_instance.edrms_rds", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.remote-exec (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_az"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_az': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_region"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_region': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserverfqdn': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.instancelist"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.instancelist': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_vpc': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserver"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserver': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.ec2_instance_type': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provider.aws"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': evaluating
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: provider.aws
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvider
+2018-03-03T22:12:24.448-0700 [DEBUG] plugin: starting plugin: path=/home/terraform/edrms_terraform/staging/appnodes/.terraform/plugins/linux_amd64/terraform-provider-aws_v1.9.0_x4 args=[/home/terraform/edrms_terraform/staging/appnodes/.terraform/plugins/linux_amd64/terraform-provider-aws_v1.9.0_x4]
+2018-03-03T22:12:24.448-0700 [DEBUG] plugin: waiting for RPC address: path=/home/terraform/edrms_terraform/staging/appnodes/.terraform/plugins/linux_amd64/terraform-provider-aws_v1.9.0_x4
+2018-03-03T22:12:24.454-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: plugin address: timestamp=2018-03-03T22:12:24.454-0700 address=/tmp/plugin753938495 network=unix
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInputProvider
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: provider.aws
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec (close)': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec (close)': evaluating
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws (close)': walking
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: provisioner.remote-exec (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': evaluating
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: provisioner.remote-exec (close)
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws (close)': evaluating
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef (close)': walking
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file (close)': walking
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalWriteOutput
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: provisioner.file (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: provisioner.file (close)
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: provisioner.chef (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: provisioner.chef (close)
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: provider.aws (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvider
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: provider.aws (close)
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkInput] Entering eval tree: meta.count-boundary (count boundary fixup)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2018/03/03 22:12:24 [TRACE] [walkInput] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "root"
+2018/03/03 22:12:24 [TRACE] vertex 'root.root': walking
+2018/03/03 22:12:24 [INFO] terraform: building graph: GraphTypeValidate
+2018/03/03 22:12:24 [TRACE] ConfigTransformer: Starting for path: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.LocalTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OutputTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Beginning...
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"main", Type:"aws_vpc", RawCount:(*config.RawConfig)(0xc4203d63f0), RawConfig:(*config.RawConfig)(0xc4203d6310), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"lamp", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203a6380), RawConfig:(*config.RawConfig)(0xc4203a61c0), Provisioners:[]*config.Provisioner{(*config.Provisioner)(0xc420344de0), (*config.Provisioner)(0xc420344ed0), (*config.Provisioner)(0xc420345050), (*config.Provisioner)(0xc4203452c0)}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"lamp_allow_all", Type:"aws_security_group", RawCount:(*config.RawConfig)(0xc4203a68c0), RawConfig:(*config.RawConfig)(0xc4203a6850), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"contentstore_clientsg", Type:"aws_security_group", RawCount:(*config.RawConfig)(0xc4203d6000), RawConfig:(*config.RawConfig)(0xc4203a6930), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_contentstore_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d60e0), RawConfig:(*config.RawConfig)(0xc4203d6070), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"chefserver_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d61c0), RawConfig:(*config.RawConfig)(0xc4203d6150), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_rds", Type:"aws_db_instance", RawCount:(*config.RawConfig)(0xc4203d62a0), RawConfig:(*config.RawConfig)(0xc4203d6230), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_vpc.main": data.aws_vpc.main
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_instance.lamp": aws_instance.lamp
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.lamp_allow_all": aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.contentstore_clientsg": aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.edrms_contentstore_ec2": data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.chefserver_ec2": data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_db_instance.edrms_rds": data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+data.aws_vpc.main - *terraform.NodeValidatableResource
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.DisableProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Attach provider request: []string{} aws
+2018/03/03 22:12:24 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc4203a60e0)}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachProviderConfigTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_vpc" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provider.aws" references: [var.aws_region]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provisioner.remote-exec" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.chefserver_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_instance.lamp" references: [data.aws_db_instance.edrms_rds data.aws_instance.chefserver_ec2 data.aws_instance.edrms_contentstore_ec2 var.aws_az var.ec2_instance_type var.instancelist]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.lamp_allow_all" references: [data.aws_vpc.main]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserver" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserverfqdn" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_db_instance.edrms_rds" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.contentstore_clientsg" references: [data.aws_vpc.main]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "output.ec2_dns_name" references: [aws_instance.lamp]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.instancelist" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provisioner.file" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_vpc.main" references: [var.aws_vpc]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_az" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.edrms_contentstore_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.ec2_instance_type" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provisioner.chef" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.file - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.file - *terraform.NodeProvisioner
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws - *terraform.NodeApplyableProvider
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_vpc - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.file - *terraform.NodeProvisioner
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResource
+  data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provisioner.chef - *terraform.NodeProvisioner
+  provisioner.file - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.aws_az - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  data.aws_vpc.main - *terraform.NodeValidatableResource
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_instance.lamp - *terraform.NodeValidatableResource
+  aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResource
+  aws_security_group.lamp_allow_all - *terraform.NodeValidatableResource
+provisioner.chef - *terraform.NodeProvisioner
+provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.file - *terraform.NodeProvisioner
+provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  aws_instance.lamp - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  provisioner.chef (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.file (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] Starting graph walk: walkValidate
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.file"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "root"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.chef"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.remote-exec"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "provisioner.chef"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_security_group.contentstore_clientsg" waiting on "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.remote-exec (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "provisioner.file"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.chef (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_db_instance.edrms_rds" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.edrms_contentstore_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provisioner.file (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_security_group.lamp_allow_all" waiting on "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "provisioner.remote-exec"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "output.ec2_dns_name" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws" waiting on "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.chefserver_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "aws_instance.lamp" waiting on "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.chefserver_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.remote-exec (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_db_instance.edrms_rds", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.chef (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_instance.lamp", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_security_group.contentstore_clientsg", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "aws_security_group.lamp_allow_all", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "output.ec2_dns_name", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.edrms_contentstore_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provisioner.file (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_vpc.main", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.chef"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef': evaluating
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.chef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvisioner
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_az"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_az': walking
+2018-03-03T22:12:24.463-0700 [DEBUG] plugin: starting plugin: path=/usr/bin/terraform args="[/usr/bin/terraform internal-plugin provisioner chef]"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.remote-exec"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.remote-exec
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvisioner
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserver"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserver': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_region"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_region': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provider.aws"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provider.aws
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvider
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.file"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file': walking
+2018-03-03T22:12:24.463-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/bin/terraform
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file': evaluating
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.instancelist"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.instancelist': walking
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.file
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvisioner
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.ec2_instance_type': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_vpc': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserverfqdn': walking
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateProvider
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Terraform version: 0.10.8  44110772d9ffd0ec3589943c6d4c93c24a5fff06
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Go runtime version: go1.9
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI args: []string{"/usr/bin/terraform", "internal-plugin", "provisioner", "chef"}
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] Attempting to open CLI config file: /home/terraform/.terraformrc
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] CLI config is &main.Config{Providers:map[string]string{}, Provisioners:map[string]string{}, DisableCheckpoint:false, DisableCheckpointSignature:false, PluginCacheDir:"", Credentials:map[string]map[string]interface {}(nil), CredentialsHelpers:map[string]*main.ConfigCredentialsHelper(nil)}
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "chef"}
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: chef-provisioner (internal) 2018/03/03 22:12:24 [INFO] Starting provisioner plugin chef
+2018-03-03T22:12:24.471-0700 [DEBUG] plugin.terraform: plugin address: timestamp=2018-03-03T22:12:24.471-0700 address=/tmp/plugin277870486 network=unix
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.chef
+2018-03-03T22:12:24.472-0700 [DEBUG] plugin: starting plugin: path=/usr/bin/terraform args="[/usr/bin/terraform internal-plugin provisioner remote-exec]"
+2018-03-03T22:12:24.472-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/bin/terraform
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Terraform version: 0.10.8  44110772d9ffd0ec3589943c6d4c93c24a5fff06
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Go runtime version: go1.9
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI args: []string{"/usr/bin/terraform", "internal-plugin", "provisioner", "remote-exec"}
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] Attempting to open CLI config file: /home/terraform/.terraformrc
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] CLI config is &main.Config{Providers:map[string]string{}, Provisioners:map[string]string{}, DisableCheckpoint:false, DisableCheckpointSignature:false, PluginCacheDir:"", Credentials:map[string]map[string]interface {}(nil), CredentialsHelpers:map[string]*main.ConfigCredentialsHelper(nil)}
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "remote-exec"}
+2018-03-03T22:12:24.480-0700 [DEBUG] plugin.terraform: remote-exec-provisioner (internal) 2018/03/03 22:12:24 [INFO] Starting provisioner plugin remote-exec
+2018-03-03T22:12:24.481-0700 [DEBUG] plugin.terraform: plugin address: timestamp=2018-03-03T22:12:24.481-0700 network=unix address=/tmp/plugin926492010
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.remote-exec
+2018-03-03T22:12:24.481-0700 [DEBUG] plugin: starting plugin: path=/usr/bin/terraform args="[/usr/bin/terraform internal-plugin provisioner file]"
+2018-03-03T22:12:24.482-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/bin/terraform
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Terraform version: 0.10.8  44110772d9ffd0ec3589943c6d4c93c24a5fff06
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] Go runtime version: go1.9
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI args: []string{"/usr/bin/terraform", "internal-plugin", "provisioner", "file"}
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] Attempting to open CLI config file: /home/terraform/.terraformrc
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [DEBUG] CLI config is &main.Config{Providers:map[string]string{}, Provisioners:map[string]string{}, DisableCheckpoint:false, DisableCheckpointSignature:false, PluginCacheDir:"", Credentials:map[string]map[string]interface {}(nil), CredentialsHelpers:map[string]*main.ConfigCredentialsHelper(nil)}
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: 2018/03/03 22:12:24 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "file"}
+2018-03-03T22:12:24.492-0700 [DEBUG] plugin.terraform: file-provisioner (internal) 2018/03/03 22:12:24 [INFO] Starting provisioner plugin file
+2018-03-03T22:12:24.493-0700 [DEBUG] plugin.terraform: plugin address: timestamp=2018-03-03T22:12:24.492-0700 address=/tmp/plugin651267380 network=unix
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.file
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSetProviderConfig
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provider.aws
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': evaluating
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': walking
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': evaluating
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_vpc.main - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_vpc.main": data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_vpc.main - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_vpc.main - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_vpc.main" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_vpc.main - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_vpc.main - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_vpc.main"
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_db_instance.edrms_rds": data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': walking
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_db_instance.edrms_rds" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_vpc.main': evaluating
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': walking
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.chefserver_ec2": data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.chefserver_ec2" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': walking
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.edrms_contentstore_ec2": data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.edrms_contentstore_ec2" references: []
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': evaluating
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': walking
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': walking
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': walking
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.lamp_allow_all": aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.lamp_allow_all" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_security_group.lamp_allow_all - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateCount
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.lamp_allow_all"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': walking
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_security_group.contentstore_clientsg": aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_security_group.contentstore_clientsg" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_security_group.contentstore_clientsg - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_security_group.contentstore_clientsg"
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': expanding/walking dynamic subgraph
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "aws_instance.lamp": aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.lamp_allow_all': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "aws_instance.lamp" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_security_group.contentstore_clientsg': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_instance.lamp - *terraform.NodeValidatableResourceInstance
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "aws_instance.lamp"
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': walking
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] vertex 'root.aws_instance.lamp': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_security_group.contentstore_clientsg
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateResource
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateProvisioner
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_security_group.lamp_allow_all
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvisioner
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalValidateProvisioner
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: aws_instance.lamp
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.remote-exec (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec (close)': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws (close)': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.file (close)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.remote-exec (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.remote-exec (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.remote-exec (close)
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file (close)': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': evaluating
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.file (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.file (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provisioner.chef (close)"
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalWriteOutput
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provider.aws (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvider
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provider.aws (close)
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef (close)': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.provisioner.chef (close)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: provisioner.chef (close)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCloseProvisioner
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.chef (close)
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: provisioner.file (close)
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2018/03/03 22:12:24 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2018/03/03 22:12:24 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (count boundary fixup)
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2018/03/03 22:12:24 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "root"
+2018/03/03 22:12:24 [TRACE] vertex 'root.root': walking
+2018/03/03 22:12:24 [INFO] backend/local: apply calling Refresh
+2018/03/03 22:12:24 [INFO] terraform: building graph: GraphTypeRefresh
+2018/03/03 22:12:24 [TRACE] No managed resources in state during refresh, skipping managed resource transformer
+2018/03/03 22:12:24 [TRACE] ConfigTransformer: Starting for path: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.edrms_contentstore_ec2": data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_instance.chefserver_ec2": data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_db_instance.edrms_rds": data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [DEBUG] Resource state not found for "data.aws_vpc.main": data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Beginning...
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_contentstore_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d60e0), RawConfig:(*config.RawConfig)(0xc4203d6070), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"chefserver_ec2", Type:"aws_instance", RawCount:(*config.RawConfig)(0xc4203d61c0), RawConfig:(*config.RawConfig)(0xc4203d6150), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"edrms_rds", Type:"aws_db_instance", RawCount:(*config.RawConfig)(0xc4203d62a0), RawConfig:(*config.RawConfig)(0xc4203d6230), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] AttachResourceConfigTransformer: Attach resource config request: data.aws_vpc.main
+2018/03/03 22:12:24 [TRACE] Attaching resource config: &config.Resource{Mode:1, Name:"main", Type:"aws_vpc", RawCount:(*config.RawConfig)(0xc4203d63f0), RawConfig:(*config.RawConfig)(0xc4203d6310), Provisioners:[]*config.Provisioner{}, Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.DisableProviderTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Attach provider request: []string{} aws
+2018/03/03 22:12:24 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc4203a60e0)}
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.AttachProviderConfigTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.LocalTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.OutputTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_db_instance.edrms_rds" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_vpc.main" references: [var.aws_vpc]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserverfqdn" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.instancelist" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.edrms_contentstore_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "data.aws_instance.chefserver_ec2" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_vpc" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.aws_az" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.ec2_instance_type" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "var.chefserver" references: []
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "provider.aws" references: [var.aws_region]
+2018/03/03 22:12:24 [DEBUG] ReferenceTransformer: "output.ec2_dns_name" references: []
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+root - terraform.graphNodeRoot
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+  provider.aws - *terraform.NodeApplyableProvider
+  var.aws_vpc - *terraform.NodeRootVariable
+output.ec2_dns_name - *terraform.NodeApplyableOutput
+provider.aws - *terraform.NodeApplyableProvider
+  var.aws_region - *terraform.NodeRootVariable
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResource
+  data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResource
+  data.aws_vpc.main - *terraform.NodeRefreshableDataResource
+root - terraform.graphNodeRoot
+  output.ec2_dns_name - *terraform.NodeApplyableOutput
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+  var.aws_az - *terraform.NodeRootVariable
+  var.chefserver - *terraform.NodeRootVariable
+  var.chefserverfqdn - *terraform.NodeRootVariable
+  var.ec2_instance_type - *terraform.NodeRootVariable
+  var.instancelist - *terraform.NodeRootVariable
+var.aws_az - *terraform.NodeRootVariable
+var.aws_region - *terraform.NodeRootVariable
+var.aws_vpc - *terraform.NodeRootVariable
+var.chefserver - *terraform.NodeRootVariable
+var.chefserverfqdn - *terraform.NodeRootVariable
+var.ec2_instance_type - *terraform.NodeRootVariable
+var.instancelist - *terraform.NodeRootVariable
+2018/03/03 22:12:24 [DEBUG] Starting graph walk: walkRefresh
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "root"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added new vertex: "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "var.chefserver"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "var.instancelist"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "data.aws_vpc.main"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws" waiting on "var.aws_region"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.edrms_contentstore_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_db_instance.edrms_rds" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_instance.chefserver_ec2" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "root" waiting on "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] dag/walk: added edge: "data.aws_vpc.main" waiting on "provider.aws"
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_vpc.main", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.edrms_contentstore_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_db_instance.edrms_rds", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "data.aws_instance.chefserver_ec2", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_region"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_region': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.instancelist"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.instancelist': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.ec2_instance_type"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.ec2_instance_type': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_az"
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.aws_vpc"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_vpc': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "output.ec2_dns_name"
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserverfqdn"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserverfqdn': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "var.chefserver"
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.chefserver': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.var.aws_az': walking
+2018/03/03 22:12:24 [TRACE] dag/walk: walking "provider.aws"
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': walking
+2018/03/03 22:12:24 [TRACE] vertex 'root.output.ec2_dns_name': evaluating
+2018/03/03 22:12:24 [TRACE] [walkRefresh] Entering eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalWriteOutput
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] [walkRefresh] Exiting eval tree: output.ec2_dns_name
+2018/03/03 22:12:24 [TRACE] vertex 'root.provider.aws': evaluating
+2018/03/03 22:12:24 [TRACE] [walkRefresh] Entering eval tree: provider.aws
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInitProvider
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSetProviderConfig
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalOpFilter
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:24 [TRACE] root: eval: *terraform.EvalConfigProvider
+2018-03-03T22:12:24.514-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:24 [INFO] No assume_role block read from configuration
+2018-03-03T22:12:24.514-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:24 [INFO] Building AWS region structure
+2018-03-03T22:12:24.514-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:24 [INFO] Building AWS auth structure
+2018-03-03T22:12:24.514-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:24 [INFO] Setting AWS metadata API timeout to 100ms
+2018-03-03T22:12:25.174-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:25 [INFO] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+2018-03-03T22:12:25.174-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:25 [INFO] AWS Auth provider used: "EnvProvider"
+2018-03-03T22:12:25.174-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:25 [INFO] Initializing DeviceFarm SDK connection
+2018-03-03T22:12:25.485-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:25 [DEBUG] Trying to get account ID via iam:GetUser
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: provider.aws
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': walking
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': walking
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_vpc.main"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_vpc.main': walking
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': evaluating
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_vpc.main': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_vpc.main
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': walking
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': evaluating
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': expanding/walking dynamic subgraph
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] OrphanResourceCount: Starting...
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2018/03/03 22:12:26 [DEBUG] Resource state not found for "data.aws_instance.edrms_contentstore_ec2": data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [DEBUG] ReferenceTransformer: "data.aws_instance.edrms_contentstore_ec2" references: []
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_instance.edrms_contentstore_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] dag/walk: added new vertex: "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_instance.edrms_contentstore_ec2"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': walking
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': expanding/walking dynamic subgraph
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.edrms_contentstore_ec2': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] OrphanResourceCount: Starting...
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [DEBUG] Resource state not found for "data.aws_db_instance.edrms_rds": data.aws_db_instance.edrms_rds
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalWriteState
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [DEBUG] ReferenceTransformer: "data.aws_db_instance.edrms_rds" references: []
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_db_instance.edrms_rds - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] dag/walk: added new vertex: "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_db_instance.edrms_rds"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': walking
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_db_instance.edrms_rds': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_vpc.main
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_vpc.main': expanding/walking dynamic subgraph
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalWriteState
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] OrphanResourceCount: Starting...
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [DEBUG] Resource state not found for "data.aws_vpc.main": data.aws_vpc.main
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [DEBUG] ReferenceTransformer: "data.aws_vpc.main" references: []
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_vpc.main - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] dag/walk: added new vertex: "data.aws_vpc.main"
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_vpc.main"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_vpc.main': walking
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_vpc.main': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_vpc.main
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalWriteState
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': expanding/walking dynamic subgraph
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] OrphanResourceCount: Starting...
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataDiff
+2018/03/03 22:12:26 [DEBUG] Resource state not found for "data.aws_instance.chefserver_ec2": data.aws_instance.chefserver_ec2
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [DEBUG] ReferenceTransformer: "data.aws_instance.chefserver_ec2" references: []
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] Graph after step *terraform.RootTransformer:
+
+data.aws_instance.chefserver_ec2 - *terraform.NodeRefreshableDataResourceInstance
+2018/03/03 22:12:26 [TRACE] dag/walk: added new vertex: "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataDiff
+2018/03/03 22:12:26 [TRACE] dag/walk: walking "data.aws_instance.chefserver_ec2"
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': walking
+2018/03/03 22:12:26 [TRACE] vertex 'root.data.aws_instance.chefserver_ec2': evaluating
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Entering eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalSequence
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalWriteState
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalInterpolate
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataDiff
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalIf
+2018/03/03 22:12:26 [TRACE] root: eval: terraform.EvalNoop
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalGetProvider
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataDiff
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataApply
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataApply
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataApply
+2018/03/03 22:12:26 [TRACE] root: eval: *terraform.EvalReadDataApply
+2018-03-03T22:12:26.344-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Reading AWS VPC: {
+2018-03-03T22:12:26.344-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:   VpcIds: ["vpc-72fc5d0a"]
+2018-03-03T22:12:26.344-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: }
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Reading DB Instance: {
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:   DBInstanceIdentifier: "edrms-db"
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: }
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Reading IAM Instance: {
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:   Filters: [{
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:       Name: "tag:Name",
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:       Values: ["ChefServer"]
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:     }]
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: }
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Reading IAM Instance: {
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:   Filters: [{
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:       Name: "tag:Name",
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:       Values: ["Contentstore"]
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4:     }]
+2018-03-03T22:12:26.345-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: }
+2018-03-03T22:12:26.639-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] aws_instance - Single Instance ID found: i-0a1fb4fd7ea9a5af2
+2018-03-03T22:12:26.639-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Matching ^aws: with Name
+2018-03-03T22:12:26.702-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] aws_instance - Single Instance ID found: i-0dc2d0c91aae30e98
+2018-03-03T22:12:26.702-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 2018/03/03 22:12:26 [DEBUG] Matching ^aws: with Name
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: panic: runtime error: invalid memory address or nil pointer dereference
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: [signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x19cb4da]
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: goroutine 111 [running]:
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: github.com/terraform-providers/terraform-provider-aws/aws.dataSourceAwsDbInstanceRead(0xc4202e2fc0, 0x25663c0, 0xc420094a00, 0xc4202e2fc0, 0x0)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/opt/teamcity-agent/work/222ea50a1b4f75f4/src/github.com/terraform-providers/terraform-provider-aws/aws/data_source_aws_db_instance.go:265 +0xa8a
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*Resource).ReadDataApply(0xc420492850, 0xc4204eaaa0, 0x25663c0, 0xc420094a00, 0xc42015c8a8, 0xc420931501, 0x80000000018)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/opt/teamcity-agent/work/222ea50a1b4f75f4/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/resource.go:292 +0x8b
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*Provider).ReadDataApply(0xc420351a40, 0xc42007ca00, 0xc4204eaaa0, 0x7feacf777000, 0x0, 0x756ea1405bb094)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/opt/teamcity-agent/work/222ea50a1b4f75f4/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/provider.go:426 +0x9a
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/plugin.(*ResourceProviderServer).ReadDataApply(0xc4204861e0, 0xc420601fc0, 0xc420512180, 0x0, 0x0)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/opt/teamcity-agent/work/222ea50a1b4f75f4/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/plugin/resource_provider.go:604 +0x4e
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: reflect.Value.call(0xc420308a20, 0xc420490038, 0x13, 0x296791e, 0x4, 0xc42033ff20, 0x3, 0x3, 0x0, 0x0, ...)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/usr/local/go/src/reflect/value.go:434 +0x905
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: reflect.Value.Call(0xc420308a20, 0xc420490038, 0x13, 0xc420434f20, 0x3, 0x3, 0x0, 0x0, 0x0)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/usr/local/go/src/reflect/value.go:302 +0xa4
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: net/rpc.(*service).call(0xc4203042c0, 0xc420430000, 0xc4202fa060, 0xc4202f8400, 0xc42046d260, 0x20d16c0, 0xc420601fc0, 0x16, 0x20d1700, 0xc420512180, ...)
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/usr/local/go/src/net/rpc/server.go:381 +0x142
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: created by net/rpc.(*Server).ServeCodec
+2018-03-03T22:12:26.886-0700 [DEBUG] plugin.terraform-provider-aws_v1.9.0_x4: 	/usr/local/go/src/net/rpc/server.go:475 +0x36b
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalReadDataApply, err: data.aws_instance.edrms_contentstore_ec2: unexpected EOF
+2018-03-03T22:12:26.888-0700 [DEBUG] plugin: plugin process exited: path=/home/terraform/edrms_terraform/staging/appnodes/.terraform/plugins/linux_amd64/terraform-provider-aws_v1.9.0_x4
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalReadDataApply, err: data.aws_vpc.main: unexpected EOF
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalSequence, err: data.aws_vpc.main: unexpected EOF
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_vpc.main
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalSequence, err: data.aws_instance.edrms_contentstore_ec2: unexpected EOF
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_instance.edrms_contentstore_ec2
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalReadDataApply, err: data.aws_db_instance.edrms_rds: unexpected EOF
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalSequence, err: data.aws_db_instance.edrms_rds: unexpected EOF
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_db_instance.edrms_rds
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalReadDataApply, err: data.aws_instance.chefserver_ec2: unexpected EOF
+2018/03/03 22:12:26 [ERROR] root: eval: *terraform.EvalSequence, err: data.aws_instance.chefserver_ec2: unexpected EOF
+2018/03/03 22:12:26 [TRACE] [walkRefresh] Exiting eval tree: data.aws_instance.chefserver_ec2
+2018/03/03 22:12:26 [TRACE] dag/walk: upstream errored, not walking "provider.aws (close)"
+2018/03/03 22:12:26 [TRACE] dag/walk: upstream errored, not walking "root"
+2018/03/03 22:12:26 [DEBUG] plugin: waiting for all plugin processes to complete...
+2018-03-03T22:12:26.888-0700 [WARN ] plugin: error closing client during Kill: err="connection is shut down"
+2018-03-03T22:12:26.889-0700 [DEBUG] plugin.terraform: chef-provisioner (internal) 2018/03/03 22:12:26 [DEBUG] plugin: waiting for all plugin processes to complete...
+2018-03-03T22:12:26.889-0700 [DEBUG] plugin.terraform: file-provisioner (internal) 2018/03/03 22:12:26 [DEBUG] plugin: waiting for all plugin processes to complete...
+2018-03-03T22:12:26.890-0700 [DEBUG] plugin: plugin process exited: path=/usr/bin/terraform
+2018-03-03T22:12:26.890-0700 [DEBUG] plugin.terraform: remote-exec-provisioner (internal) 2018/03/03 22:12:26 [DEBUG] plugin: waiting for all plugin processes to complete...
+2018-03-03T22:12:26.890-0700 [DEBUG] plugin: plugin process exited: path=/usr/bin/terraform
+2018-03-03T22:12:26.891-0700 [DEBUG] plugin: plugin process exited: path=/usr/bin/terraform
